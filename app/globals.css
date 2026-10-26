@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 22 30% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 22 30% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 22 30% 18%;
+    --primary: 24 88% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 45% 96%;
+    --secondary-foreground: 142 60% 22%;
+    --muted: 30 20% 96%;
+    --muted-foreground: 25 15% 42%;
+    --accent: 24 88% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 24 88% 52%;
+    --radius: 0.625rem;
+
+    --saffron: 24 88% 52%;
+    --saffron-light: 28 95% 58%;
+    --india-green: 142 52% 32%;
+    --india-green-light: 142 45% 45%;
+    --navy: 222 47% 24%;
+    --cream: 40 50% 98%;
+
+    --chart-1: 24 88% 52%;
+    --chart-2: 142 52% 32%;
+    --chart-3: 222 47% 40%;
+    --chart-4: 43 80% 56%;
+    --chart-5: 340 70% 50%;
+  }
+  .dark {
+    --background: 22 25% 9%;
+    --foreground: 30 20% 92%;
+    --card: 22 25% 12%;
+    --card-foreground: 30 20% 92%;
+    --popover: 22 25% 12%;
+    --popover-foreground: 30 20% 92%;
+    --primary: 28 90% 55%;
+    --primary-foreground: 22 25% 9%;
+    --secondary: 142 30% 18%;
+    --secondary-foreground: 142 40% 80%;
+    --muted: 22 20% 18%;
+    --muted-foreground: 30 15% 65%;
+    --accent: 28 90% 55%;
+    --accent-foreground: 22 25% 9%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 22 20% 22%;
+    --input: 22 20% 22%;
+    --ring: 28 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .tricolor-border {
+    background: linear-gradient(
+      to right,
+      hsl(24 88% 52%) 0%,
+      hsl(24 88% 52%) 33.33%,
+      hsl(0 0% 100%) 33.33%,
+      hsl(0 0% 100%) 66.66%,
+      hsl(142 52% 32%) 66.66%,
+      hsl(142 52% 32%) 100%
+    );
+  }
+  .tricolor-border-b {
+    border-bottom: 3px solid transparent;
+    background-image: linear-gradient(to bottom, transparent calc(100% - 3px), hsl(24 88% 52%) calc(100% - 3px), hsl(24 88% 52%) calc(100% - 2px), hsl(0 0% 100%) calc(100% - 2px), hsl(0 0% 100%) calc(100% - 1px), hsl(142 52% 32%) calc(100% - 1px));
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
